@@ -16,7 +16,7 @@ set -eux
 #   known architectures. Know architectures include amd64, arm32v6, and arm64v8.
 
 
-source "$(realpath $(dirname ${BASH_SOURCE[0]}))/lib/common"
+source "$(realpath "$(pwd)")/lib/common"
 
 ParseArgs "$@"
 
