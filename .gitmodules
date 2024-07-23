@@ -1,0 +1,3 @@
+[submodule "certbot-dns-hetzner"]
+	path = certbot-dns-hetzner
+	url = https://github.com/ctrlaltcoop/certbot-dns-hetzner
