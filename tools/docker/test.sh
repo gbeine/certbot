@@ -1,5 +1,5 @@
 #!/bin/bash
-set -eux
+set -euxo pipefail
 
 # This script tests certbot docker and certbot dns plugin images.
 
@@ -12,7 +12,7 @@ set -eux
 #   user may provide a comma separated list of architectures drawn from the
 #   known architectures. Known architectures include amd64, arm32v6, and arm64v8.
 
-source "$(realpath "$(pwd)")/lib/common"
+source "$(realpath $(dirname "${BASH_SOURCE[0]}"))/lib/common"
 
 ParseArgs "$@"
 

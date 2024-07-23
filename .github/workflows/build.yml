@@ -25,7 +25,10 @@ jobs:
           submodules: true
 
       - name: Build and push
+        shell: bash
         run: |
           cd tools/docker
-          sh build.sh 2.0.1 all
-          sh test.sh 2.0.1 all
+          bash build.sh 2.0.1 all
+          bash test.sh 2.0.1 all
+          bash deploy_images.sh 2.0.1 all
+          bash deploy_manifests.sh 2.0.1 all

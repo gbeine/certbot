@@ -1,5 +1,5 @@
 #!/bin/bash
-set -eux
+set -euxo pipefail
 
 # This script builds docker images for certbot and each dns plugin from the
 # local Certbot source files. Results are stored in the docker image cache
@@ -13,7 +13,7 @@ set -eux
 #   user may provide a comma separated list of architectures drawn from the
 #   known architectures. Known architectures include amd64, arm32v6, and arm64v8.
 
-source "./lib/common"
+source "$(realpath "$(dirname "${BASH_SOURCE[0]}")")/lib/common"
 
 ParseArgs "$@"
 

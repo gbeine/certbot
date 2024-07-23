@@ -1,5 +1,5 @@
 #!/bin/bash
-set -eux
+set -euxo pipefail
 
 # This script generates multi-arch manifests for images previously pushed to
 # Docker Hub via deploy_images.sh
@@ -16,7 +16,7 @@ set -eux
 #   known architectures. Know architectures include amd64, arm32v6, and arm64v8.
 
 
-source "$(realpath "$(pwd)")/lib/common"
+source "$(realpath $(dirname ${BASH_SOURCE[0]}))/lib/common"
 
 ParseArgs "$@"
 

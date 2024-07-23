@@ -1,5 +1,5 @@
 #!/bin/bash
-set -eux
+set -euxo pipefail
 
 # Current supported architectures
 export ALL_TARGET_ARCH=(amd64 arm32v6 arm64v8)
