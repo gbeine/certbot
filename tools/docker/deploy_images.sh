@@ -1,10 +1,10 @@
 #!/bin/bash
-set -euxo pipefail
+set -eux
 
 # This script takes docker images in the local docker cache and pushes them to
 # Docker Hub.
 
-# Usage: 
+# Usage:
 #       ./deploy_images.sh <TAG> all
 #       ./deploy_images.sh <TAG> <architectures>
 #   The <TAG> argument is an identifier applied to all docker images and manifests.

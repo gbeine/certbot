@@ -1,9 +1,9 @@
 #!/bin/bash
-set -euxo pipefail
+set -eux
 
 # This script tests certbot docker and certbot dns plugin images.
 
-# Usage: 
+# Usage:
 #       ./test.sh <tag> all
 #       ./test.sh <tag> <architectures>
 #   The <tag> argument is used to identify the code version (e.g v2.3.1) or type of build

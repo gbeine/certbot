@@ -1,10 +1,10 @@
 #!/bin/bash
-set -euxo pipefail
+set -eux
 
 # This script generates multi-arch manifests for images previously pushed to
 # Docker Hub via deploy_images.sh
 
-# Usage: 
+# Usage:
 #       ./deploy_manifest.sh <TAG> all
 #       ./deploy_manifest.sh <TAG> <architectures>
 #   The <TAG> argument is an identifier applied to all docker images and manifests.
@@ -30,7 +30,7 @@ REGISTRY_SPEC="${DOCKER_HUB_ORG}/"
 
 DeployManifest() {
     IMAGE_NAME=$1
-    
+
     SRC_IMAGES=""
     for TAG_ARCH in "${REQUESTED_ARCH_ARRAY[@]}"; do
         SRC_IMAGES+="${REGISTRY_SPEC}${IMAGE_NAME}:${TAG_ARCH}-${TAG_VER} "

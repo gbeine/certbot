@@ -1,12 +1,12 @@
 #!/bin/bash
-set -euxo pipefail
+set -eux
 
 # This script builds docker images for certbot and each dns plugin from the
 # local Certbot source files. Results are stored in the docker image cache
 
-# Usage: 
-#       ./build.sh <tag> all 
-#       ./build.sh <tag> <architectures> 
+# Usage:
+#       ./build.sh <tag> all
+#       ./build.sh <tag> <architectures>
 #   The <tag> argument is used to identify the code version (e.g v2.3.1) or type of build
 #   (e.g. nightly). This will be used when saving images to the docker image cache.
 #   The argument "all" will build all known architectures. Alternatively, the
