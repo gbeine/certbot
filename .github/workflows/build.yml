@@ -24,10 +24,8 @@ jobs:
         with:
           submodules: true
 
-#      - name: Build and push
-#        uses: docker/build-push-action@v6
-#        with:
-#          context: ./${{ matrix.version }}/${{ matrix.type }}
-#          platforms: linux/amd64,linux/arm64 #,linux/arm/v6
-#          push: true
-#          tags: gbeine/mediawiki:${{ matrix.version }}
+      - name: Build and push
+        run: |
+          cd tools/docker
+          sh build.sh 2.0.1 all
+          sh test.sh 2.0.1 all
