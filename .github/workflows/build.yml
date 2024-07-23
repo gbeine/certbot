@@ -28,7 +28,7 @@ jobs:
         shell: bash
         run: |
           cd tools/docker
-          bash build.sh 2.0.1 all
-          bash test.sh 2.0.1 all
-          bash deploy_images.sh 2.0.1 all
-          bash deploy_manifests.sh 2.0.1 all
+          bash build.sh v2.0.1 all
+          bash test.sh v2.0.1 all
+          bash deploy_images.sh v2.0.1 all
+          bash deploy_manifests.sh v2.0.1 all
