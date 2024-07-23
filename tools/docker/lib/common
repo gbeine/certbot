@@ -1,5 +1,5 @@
 #!/bin/bash
-set -euxo pipefail
+set -eux
 
 # Current supported architectures
 export ALL_TARGET_ARCH=(amd64 arm32v6 arm64v8)
@@ -58,7 +58,7 @@ ParseArgs() {
     local IFS=","
     # Handle the special value "all"
     if [[ "${ARCH_LIST}" == "all" ]]; then
-        # Replace with comma separated 
+        # Replace with comma separated
         ARCH_LIST="${ALL_TARGET_ARCH[*]}"
     fi
 
@@ -76,7 +76,7 @@ ParseArgs() {
 }
 
 
-# Function for use with trap in the primary scripts to remove the 
+# Function for use with trap in the primary scripts to remove the
 # docker builder and restore the original directory
 Cleanup() {
     docker buildx rm certbot_builder || true
