@@ -13,7 +13,7 @@ set -eux
 #   user may provide a comma separated list of architectures drawn from the
 #   known architectures. Known architectures include amd64, arm32v6, and arm64v8.
 
-source "$(realpath "$(pwd)")/lib/common"
+source "./lib/common"
 
 ParseArgs "$@"
 
