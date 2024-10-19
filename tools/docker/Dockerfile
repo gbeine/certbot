@@ -48,6 +48,9 @@ RUN apk add --no-cache --virtual .build-deps \
     && apk del .build-deps \
     && rm -rf ${HOME}/.cargo
 
+# Install podman & docker tools for notification
+RUN apk add --no-cache docker-cli podman
+
 #static definition for making a plugin, but beware that
 #using this layer definition will cause collisions if you make
 #extensive use of the cache.
