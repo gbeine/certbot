@@ -94,5 +94,11 @@ CreateBuilder() {
     # just incase the env is not perfectly clean, remove any old instance of the builder
     docker buildx rm certbot_builder || true
     # create the builder instance
-    docker buildx create --name certbot_builder --driver docker-container --driver-opt=network=host --bootstrap
+    #
+    # BUILDKIT_STEP_LOG_MAX_* environment variables are set to prevent docker
+    # from truncating build logs that can be useful during debugging. See
+    # https://github.com/docker/buildx/issues/484#issuecomment-749352728
+    docker buildx create --name certbot_builder --driver docker-container \
+        --driver-opt=network=host --driver-opt env.BUILDKIT_STEP_LOG_MAX_SIZE=-1 \
+        --driver-opt env.BUILDKIT_STEP_LOG_MAX_SPEED=-1 --bootstrap
 }
